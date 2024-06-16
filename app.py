@@ -121,7 +121,7 @@ class MovingImageApp(QWidget):
         screen_geometry = QApplication.desktop().screenGeometry()
         self.yPos = screen_geometry.bottom() - self.height()+40
         self.xPos = screen_geometry.left()
-        self.setGeometry(screen_geometry.left(), self.yPos, self.width(), self.height())
+        self.setGeometry(screen_geometry.left(), self.yPos, self.width()-200, self.height())
         self.setWindowFlags(Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint)
         self.setAttribute(Qt.WA_TranslucentBackground)
         self.setAttribute(Qt.WA_NoSystemBackground)

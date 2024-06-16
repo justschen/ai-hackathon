@@ -110,7 +110,7 @@ class OpenAiManager:
 
         print("[yellow]\nProcessing...", self.chat_history)
         completion = self.client.chat.completions.create(
-          model="gpt4o", # gpt-4o, Turbo, Gpt4, depends on what deployments we have.
+          model="gpt-4o", # gpt-4o, Turbo, Gpt4, depends on what deployments we have.
           messages=self.chat_history
         )
 

@@ -16,7 +16,7 @@ vs code internal hackathon project
 - Can ignore the OBS code.
 - See the `AUTHANDKEYS.py` file to put your keys in.
 
-### Starting the app.
+### How to use the app!
 - `sudo python app.py`
 - A floating head will appear. Navigate buttons via the menu bar at the top of the screen
 - Click `Actions`-> `Chat` or `Chat with Context`. Screenshots will also trigger the listener.
@@ -25,3 +25,10 @@ vs code internal hackathon project
 ### Note:
 - If trying using Azure Open AI, might have some limitations
 - Not sure if the gpt-4o deployment is working atm. Others should be okay, but then screenshot and image processing will not work. 
+
+### Key Files:
+- AUTHANDKEYS.py: auth and keys
+- openai_chat.py: changing deployment model, azure vs regular open ai
+- app.py: main logic, lot's of hardcoded stuff
+
+![Example](/readme.png)
