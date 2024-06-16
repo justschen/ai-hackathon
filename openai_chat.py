@@ -3,12 +3,13 @@ import os
 import boto3
 import pyautogui
 import tiktoken
+from azure.identity import DefaultAzureCredential, get_bearer_token_provider
 from botocore.exceptions import NoCredentialsError
-from openai import OpenAI, AzureOpenAI
+from openai import AzureOpenAI, OpenAI
 from rich import print
 
-from s3 import S3Uploader
 from AUTHANDKEYS import OPEN_AI_KEY
+from s3 import S3Uploader
 
 s3 = S3Uploader()
 
@@ -37,20 +38,18 @@ class OpenAiManager:
         try:
             self.client = OpenAI(api_key=OPEN_AI_KEY)
             # using azure open ai
-            # endpoint = os.environ["AZURE_OPENAI_ENDPOINT"]
-            # deployment = os.environ["CHAT_COMPLETIONS_DEPLOYMENT_NAME"]
-            # search_endpoint = os.environ["SEARCH_ENDPOINT"]
-            # search_index = os.environ["SEARCH_INDEX"]
+            # os.environ["AZURE_OPENAI_ENDPOINT"] = "URL THAT LOGAN PROVIDED OUR ENDPOINT"
+            # os.environ["CHAT_COMPLETIONS_DEPLOYMENT_NAME"] = "gpt-4o" # gpt-4o, Turbo, Gpt4, depends on what deployments we have.
+            # os.environ["AZURE_OPENAI_API_VERSION"] = "VERSION"
+            # os.environ["AZURE_OPENAI_API_KEY"] = "FILL IN WITH API KEY"
                 
-            # token_provider = get_bearer_token_provider(DefaultAzureCredential(), "https://cognitiveservices.azure.com/.default")
-                
-            # client = AzureOpenAI(
-            #     azure_endpoint=endpoint,
-            #     azure_ad_token_provider=token_provider,
-            #     api_version="2024-02-01",
+            # self.client = AzureOpenAI(
+            #     azure_endpoint=os.environ["AZURE_OPENAI_ENDPOINT"],
+            #     api_version=os.environ["AZURE_OPENAI_API_VERSION"],
+            #     api_key=os.environ["AZURE_OPENAI_API_KEY"],
             # )
         except TypeError:
-            exit("Ooops! You forgot to set OPENAI_API_KEY in your environment!")
+            exit("Ooops! Issue with setting API for open ai or azure AI")
 
     # Asks a question with no chat history
     def chat(self, prompt=""):
@@ -111,7 +110,7 @@ class OpenAiManager:
 
         print("[yellow]\nProcessing...", self.chat_history)
         completion = self.client.chat.completions.create(
-          model="gpt-4",
+          model="gpt4o", # gpt-4o, Turbo, Gpt4, depends on what deployments we have.
           messages=self.chat_history
         )
 
