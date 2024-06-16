@@ -21,3 +21,7 @@ vs code internal hackathon project
 - A floating head will appear. Navigate buttons via the menu bar at the top of the screen
 - Click `Actions`-> `Chat` or `Chat with Context`. Screenshots will also trigger the listener.
 - After you've finished talking, press `p` in the terminal to stop listening and start the request.
+
+### Note:
+- If trying using Azure Open AI, might have some limitations
+- Not sure if the gpt-4o deployment is working atm. Others should be okay, but then screenshot and image processing will not work. 
