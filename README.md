@@ -31,4 +31,4 @@ vs code internal hackathon project
 - openai_chat.py: changing deployment model, azure vs regular open ai
 - app.py: main logic, lot's of hardcoded stuff
 
-![Example](/readme.png)
+<img width="750" alt="Screen Shot 2024-06-16 at 4 47 46 PM" src="https://github.com/justschen/ai-hackathon/assets/54879025/b93d0223-3d98-450a-8f01-28006ce6c8d2">
