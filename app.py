@@ -7,7 +7,6 @@ import time
 import wave
 
 import keyboard
-import librosa
 import numpy as np
 import pygame
 import scipy.io.wavfile as wavfile
@@ -209,7 +208,6 @@ class MovingImageApp(QWidget):
         self.amplitude = self.wavform[current_index]
         x_offset = int((self.amplitude + 1) * (self.width() - self.label.width()) / 2)
         y_offset = int(0)
-        print(self.amplitude)
 
         self.label.move(x_offset*14-260, y_offset+20)
 
@@ -230,9 +228,6 @@ class MovingImageApp(QWidget):
     def closeEvent(self, event):
         if self.stream:
             self.stream.stop()
-        self.observer.stop()
-        self.timer.stop()
-        event.accept()
       
 
     def handle_screenshot(self, screenshot_path):
