@@ -7,6 +7,7 @@ vs code internal hackathon project
 ### Installs
 - install requirements, there are some wonky ones
 - i didn't add a bunch in the requiurements.txt sorrry
+- for sure need: `watchdog numpy scipy soundfile boto3 botocore pyautogui pydub PyQt5 sounddevice pygame` which weren't added to requirements
 
 ### Requirements
 - OpenAI API (Azure Open AI works too)
