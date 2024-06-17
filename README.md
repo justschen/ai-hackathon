@@ -10,15 +10,15 @@ vs code internal hackathon project
 - for sure need: `watchdog numpy scipy soundfile boto3 botocore pyautogui pydub PyQt5 sounddevice pygame` which weren't added to requirements
 
 ### Requirements
-- OpenAI API (Azure Open AI works too)
-- Eleven Labs API (I can provide, DM me)
+- OpenAI API (Azure Open AI works too, see below) https://github.com/justschen/ai-hackathon/blob/488c99d6fae32b66e182bc6cd5b9fcefd8a25203/openai_chat.py#L40
+- Eleven Labs API for voices (I can provide, DM me)
 - Azure Speech (can use VS Code speech, can also use personal set up)
-- AWS (for s3, or run the risk of having huge base64 images)
+- AWS (for s3 uploading, minimizes tokens sent, or use the convert to base64 images instead)
 - Can ignore the OBS code.
 - See the `AUTHANDKEYS.py` file to put your keys in.
 
 ### How to use the app!
-- `sudo python app.py`
+- `sudo python app.py` (needs sudo for keyboard)
 - A floating head will appear. Navigate buttons via the menu bar at the top of the screen
 - Click `Actions`-> `Chat` or `Chat with Context`. Screenshots will also trigger the listener.
 - After you've finished talking, press `p` in the terminal to stop listening and start the request.
